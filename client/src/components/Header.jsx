@@ -11,7 +11,7 @@ export default function Header() {
   const path = useLocation().pathname;
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
-  const {theme} = useSelector((state) => state.theme);
+  const { theme } = useSelector((state) => state.theme);
   return (
     <Navbar className="border-b-2">
       <Link
@@ -40,14 +40,21 @@ export default function Header() {
           pill
           onClick={() => dispatch(toggleTheme())}
         >
-          {theme === 'light' ? <FaMoon/> : <FaSun/>}
+          {theme === "light" ? <FaMoon /> : <FaSun />}
         </Button>
         {currentUser ? (
           <Dropdown
             arrowIcon={false}
             inline
             label={
-              <Avatar alt="user" img={currentUser.profilePicture} rounded />
+              <Avatar
+                alt="user"
+                img={
+                  currentUser.profilePicture ||
+                  "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                }
+                rounded
+              />
             }
           >
             <Dropdown.Header>

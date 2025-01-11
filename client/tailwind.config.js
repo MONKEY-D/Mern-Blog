@@ -1,9 +1,16 @@
-const flowbite = require("flowbite-react/tailwind");
+import flowbite from "flowbite-react/tailwind";
+import tailwindScrollbar from "tailwind-scrollbar";
+import tailwindLineClamp from "@tailwindcss/line-clamp";
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}", flowbite.content()],
+export default {
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}", ...flowbite.content()],
   theme: {
     extend: {},
   },
-  plugins: [flowbite.plugin(), require('tailwind-scrollbar'), require('@tailwindcss/line-clamp')],
+  plugins: [
+    flowbite.plugin(),
+    tailwindScrollbar,
+    tailwindLineClamp,
+  ],
 };

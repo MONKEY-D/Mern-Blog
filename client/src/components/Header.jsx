@@ -69,7 +69,7 @@ export default function Header() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
-        <Button type="submit" className="w-12 h-10 lg:hidden" color="gray" pill>
+        <Button type="submit" className="w-12 h-10 lg:hidden" color="gray" pill onChange={(e) => setSearchTerm(e.target.value)}>
           <AiOutlineSearch />
         </Button>
       </form>

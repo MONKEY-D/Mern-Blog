@@ -59,7 +59,7 @@ export default function Header() {
         </span>
         Blog
       </Link>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex items-center">
         <TextInput
           type="text"
           placeholder="Search..."
@@ -69,7 +69,7 @@ export default function Header() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
-        <Button className="w-12 h-10 lg:hidden" color="gray" pill>
+        <Button type="submit" className="w-12 h-10 lg:hidden" color="gray" pill>
           <AiOutlineSearch />
         </Button>
       </form>
